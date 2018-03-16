@@ -1,0 +1,26 @@
+<?php require('authenticate.inc');
+include('head.inc');
+
+?>
+
+<title>My Account</title>
+
+</head><body style="background-color:#7f7fff;">
+
+<div><p align="Center"><img src="images/511bingologo.png" alt="511 Bingo.site logo" width="75%"/></p><p><h1 align="center">511 Bingo</h1></p>
+<p><?php include('navbar.inc');?></p></div>
+<div><h1 align="center">Welcome <?php echo $_SESSION['user']['username'];?>! </h1><div>
+
+<div><p>
+<table align="Center">
+<tr><td align="Center"><form name="logout" method="post" action="logout.html"><input type="submit" value="Logout"></form></td></tr><tr>
+<form method="post" action="card.html" name="card">
+<td align="center"><a href="card.html">Generate New Card</a></td>
+</form>
+</tr>
+</table>
+</p></div>
+
+<? include('foot.inc');
+
+?>

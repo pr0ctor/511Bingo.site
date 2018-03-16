@@ -1,0 +1,55 @@
+/*stylesheet*/
+
+
+body 
+{
+	background-color: #7f7fff;
+	
+	
+}
+
+table.card-table td
+{
+	height:5em;
+	
+}
+
+a:link
+{
+	color:#ffffb2;
+}
+a:visited
+{
+	color:#ffffb2;
+}
+a:hover
+{
+	color:#ffffcc;
+}
+a:active
+{
+	color:#ffffb2;
+}
+
+
+#logoimage	
+{
+	height:100%;
+	
+	
+}
+
+.card-active
+{
+	background-color: #ff7f7f;
+}
+
+.error-text
+{
+	color: #ff7f7f;
+}
+
+.success-txt
+{
+	color: #b2ffb2;
+}

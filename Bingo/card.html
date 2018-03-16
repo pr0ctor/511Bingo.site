@@ -1,0 +1,49 @@
+<?php include('authenticate.inc');
+	include('db.inc');
+	include('head.inc');
+?>
+<script type="text/javascript" src="js/card.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>My Bingo Card</title>
+
+</head><body style="background-color:#7f7fff;">
+
+<div><p align="Center"><img src="images/511bingologo.png" alt="511 Bingo.site logo" width="75%"/></p><p><h1 align="center">511 Bingo</h1></p>
+<div><p><?php include('navbar.inc');?></p></div>
+<div><p align="Center">
+<table border="1" style="background-color:#b2b2ff;" width="90%" class="card-table">
+
+<?php
+		  $random = $db->query("SELECT content FROM items ORDER BY rand() LIMIT 25");
+		  
+		  $item = array();
+		  while($obj = $random->fetch_object()) $item[] = $obj;
+		  
+		  $counter = 0;
+		  foreach($item as $i)
+		  {
+
+				if($counter == 0)
+				{
+					print "<tr><td>".$i->content."</td>";
+					$counter++;
+				}
+				elseif($counter == 4)
+				{
+					print "<td>".$i->content."</td></tr>";
+					$counter = 0;
+				}
+				else
+				{
+					print "<td>".$i->content."</td>";
+					$counter++;
+				}
+				
+		  }
+
+	  ?>
+
+</table>
+</p></div>
+
+<?php include('foot.inc');?>
